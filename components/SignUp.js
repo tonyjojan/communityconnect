@@ -6,6 +6,7 @@ import { AsyncStorage } from 'react-native';
 import api from '../api/api';
 import { navigate } from '../navigationRef';
 
+import { human } from 'react-native-typography'
 
 
 export default class SignUp extends Component {
@@ -40,6 +41,9 @@ async doSignUp(email, password, occupation){
     return (
       <Container>
         <Content>
+
+        <Text style={human.largeTitle}>Sign up for CommunityConnect!</Text>
+
           <Form>
             <Item floatingLabel>
               <Label>Email</Label>
@@ -73,7 +77,7 @@ async doSignUp(email, password, occupation){
               <Picker.Item label="Other" value="3" />
             </Picker>
             </Item>
-            <Button primary onPress={() => this.doSignUp(this.state.email, this.state.password, this.state.selected)}><Text> Sign Up </Text></Button>
+            <Button full large success onPress={() => this.doSignUp(this.state.email, this.state.password, this.state.selected)}><Text> Sign Up </Text></Button>
           </Form>
         </Content>
       </Container>
